@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+<ion-label position="floating">Digite o CEP</ion-label>
+<ion-input [(ngModel)]="cep"></ion-input>
+</ion-item>
+<ion-button expand="block" (click)="consultarCEP()">Consultar</ion-button>
+<ion-progress-bar [type]="'indeterminate'" *ngIf="exibirProgress"></ion-progress-bar>
+<ion-label *ngIf="dadosCEP">Logradouro: {{dadosCEP.logradouro}}</ion-label><br>
+<ion-label *ngIf="dadosCEP">Bairro: {{dadosCEP.bairro}}</ion-label><br>
+<ion-label *ngIf="dadosCEP">Cidade: {{dadosCEP.localidade}}</ion-label><br>
+<ion-label *ngIf="dadosCEP">Estado: {{dadosCEP.uf}}</ion-label>
+ <ion-button expand="block" [routerLink]="['/busca-cep']">Não sabe o CEP? Clique aqui!</ion-button>
+</ion-content>
